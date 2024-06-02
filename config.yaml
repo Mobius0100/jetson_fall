@@ -1,0 +1,20 @@
+model_args:
+  in_channels: 2
+  base_channels: 64
+  tcn_type: 'mstcn'
+  gcn_with_res: True
+  gcn_adaptive: 'init'
+  num_class: 60
+  num_stages: 6
+  inflate_stages: [3, 5]
+  down_stages: [3, 5]
+  graph_cfg:
+    layout: 'coco'
+    mode: 'spatial'
+
+head_args:
+  in_channels: 256
+  num_class: 2
+  dropout: 0
+  use_batch_norm: False
+  
